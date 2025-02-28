@@ -53,8 +53,8 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public MarathonDto getMarathonById(Long marathonId) {
-        Optional<Marathon> optionalCar = marathonRepository.findById(marathonId);
-        return optionalCar.map(Marathon::getMarathonDto).orElse(null);
+        Optional<Marathon> optionalMarathon = marathonRepository.findById(marathonId);
+        return optionalMarathon.map(Marathon::getMarathonDto).orElse(null);
     }
 
     @Override
