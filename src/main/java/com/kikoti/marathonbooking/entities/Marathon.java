@@ -12,7 +12,7 @@ import java.time.LocalTime;
 
 @Data
 @Entity
-@Table(name = "Marathons")
+@Table(name = "marathons")
 public class Marathon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,7 @@ public class Marathon {
     @UpdateTimestamp
     private LocalDateTime dateUpdated;
 
+
     public MarathonDto getMarathonDto() {
         MarathonDto marathonDto = new MarathonDto();
         marathonDto.setId(id);
@@ -46,5 +47,5 @@ public class Marathon {
         marathonDto.setRegistrationFee(registrationFee);
         return marathonDto;
     }
-}
 
+}

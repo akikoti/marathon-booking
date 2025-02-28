@@ -2,6 +2,7 @@ package com.kikoti.marathonbooking.controllers;
 
 import com.kikoti.marathonbooking.Dtos.MarathonDto;
 import com.kikoti.marathonbooking.services.admin.AdminService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +19,11 @@ public class AdminController {
     private final AdminService adminService;
 
     @PostMapping("/marathon")
-    public ResponseEntity<?> createMarathon(@ModelAttribute MarathonDto marathonDto) {
+    public ResponseEntity<String> createMarathon(@Valid @RequestBody MarathonDto marathonDto) {
         boolean success = adminService.createMarathon(marathonDto);
         if (success)
-            return ResponseEntity.status(HttpStatus.CREATED).build();
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.status(HttpStatus.CREATED).body("Marathon successfully created!");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to create marathon");
     }
 
  @GetMapping("/marathons")

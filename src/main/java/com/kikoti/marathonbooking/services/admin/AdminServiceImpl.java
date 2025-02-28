@@ -41,10 +41,15 @@ public class AdminServiceImpl implements AdminService {
         return marathonRepository.findAll().stream().map(Marathon::getMarathonDto).collect(Collectors.toList());
     }
 
-    @Override
-    public void deleteMarathon(Long MarathonId) {
-
+    public void deleteMarathon(Long marathonId) {
+        // Check if the marathon exists
+        if (marathonRepository.existsById(marathonId)) {
+            marathonRepository.deleteById(marathonId);
+        } else {
+            throw new RuntimeException("Marathon not found with id: " + marathonId);
+        }
     }
+
 
     @Override
     public MarathonDto getMarathonById(Long marathonId) {
