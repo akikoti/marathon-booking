@@ -1,5 +1,6 @@
 package com.kikoti.marathonbooking.services.jwt;
 
+import com.kikoti.marathonbooking.entities.Users;
 import com.kikoti.marathonbooking.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,4 +25,9 @@ public class UserServiceImpl implements UserService {
         };
     }
 
+    @Override
+    public Users findFirstByEmail(String email) {
+        return userRepository.findFirstByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+    }
 }

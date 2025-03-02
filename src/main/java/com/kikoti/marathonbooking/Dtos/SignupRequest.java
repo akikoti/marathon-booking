@@ -1,6 +1,5 @@
 package com.kikoti.marathonbooking.Dtos;
 
-import com.kikoti.marathonbooking.enams.Gender;
 import lombok.Data;
 
 @Data

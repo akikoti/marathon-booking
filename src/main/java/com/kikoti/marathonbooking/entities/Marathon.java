@@ -23,9 +23,13 @@ public class Marathon {
     private LocalDate date;
     private LocalTime time;
     private String description;
-    private int maxParticipants;
+    private Integer maxParticipants;
     private boolean isActive;
     private double registrationFee;
+    private Integer registeredParticipantsCount = 0;
+
+    @Version
+    private Long version;
 
     @CreationTimestamp
     private LocalDateTime dateCreated;
@@ -45,7 +49,14 @@ public class Marathon {
         marathonDto.setMaxParticipants(maxParticipants);
         marathonDto.setActive(isActive);
         marathonDto.setRegistrationFee(registrationFee);
+        marathonDto.setRegisteredParticipantsCount();
         return marathonDto;
     }
 
+    public void incrementParticipantCount() {
+        if (this.registeredParticipantsCount == null) {
+            this.registeredParticipantsCount = 0;
+        }
+        this.registeredParticipantsCount++;
+    }
 }
