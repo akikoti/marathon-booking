@@ -1,6 +1,6 @@
 package com.kikoti.marathonbooking.repositories;
 
-import com.kikoti.marathonbooking.enums.UserRole;
+import com.kikoti.marathonbooking.enams.UserRole;
 import com.kikoti.marathonbooking.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

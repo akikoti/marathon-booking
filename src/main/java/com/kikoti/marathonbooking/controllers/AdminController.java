@@ -25,21 +25,19 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.CREATED).body("Marathon successfully created!");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to create marathon");
     }
-// Get all marathon from the database
- @GetMapping("/allmarathons")
+
+ @GetMapping("/marathons")
 public ResponseEntity<List<MarathonDto>> getAllMarathons() {
     List<MarathonDto> marathonDtoList = adminService.getAllMarathons();
     return ResponseEntity.ok(marathonDtoList);
 }
 
-// Delete Marathon
     @DeleteMapping("/marathon/{marathonId}")
     public ResponseEntity<Void> deleteMarathon(@PathVariable Long marathonId) {
         adminService.deleteMarathon(marathonId);
         return ResponseEntity.noContent().build();
     }
 
-    //Find Marathon
     @GetMapping("/marathon/{marathonId}")
     public ResponseEntity<MarathonDto> getMarathonById(@PathVariable Long marathonId) {
         MarathonDto marathonDto = adminService.getMarathonById(marathonId);
@@ -47,8 +45,6 @@ public ResponseEntity<List<MarathonDto>> getAllMarathons() {
         return ResponseEntity.notFound().build();
     }
 
-
-    //Update Marathon
     @PutMapping("/marathon/{marathonId}")
     public ResponseEntity<?> updateMarathon(@PathVariable Long marathonId, @ModelAttribute MarathonDto marathonDto) throws IOException {
         try {
