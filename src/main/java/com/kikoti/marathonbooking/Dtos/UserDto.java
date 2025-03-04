@@ -1,6 +1,6 @@
 package com.kikoti.marathonbooking.Dtos;
 
-import com.kikoti.marathonbooking.enums.UserRole;
+import com.kikoti.marathonbooking.enams.UserRole;
 import lombok.Data;
 
 @Data

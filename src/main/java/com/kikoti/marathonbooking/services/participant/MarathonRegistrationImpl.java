@@ -1,4 +1,4 @@
 package com.kikoti.marathonbooking.services.participant;
 
-public interface MarathonRegistrationService {
+public class MarathonRegistrationImpl {
 }

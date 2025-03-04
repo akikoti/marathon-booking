@@ -1,4 +1,4 @@
-package com.kikoti.marathonbooking.enums;
+package com.kikoti.marathonbooking.enams;
 
 public enum UserRole {
     ADMIN,

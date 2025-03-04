@@ -32,8 +32,4 @@ public class MarathonDto {
 
     @NotNull(message = "Registration fee is required")
     private double registrationFee;
-    private int registeredParticipantsCount;
-
-    public void setRegisteredParticipantsCount() {
-    }
 }

@@ -1,6 +1,6 @@
 package com.kikoti.marathonbooking.entities;
-import com.kikoti.marathonbooking.enums.Gender;
-import com.kikoti.marathonbooking.enums.UserRole;
+import com.kikoti.marathonbooking.enams.Gender;
+import com.kikoti.marathonbooking.enams.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
